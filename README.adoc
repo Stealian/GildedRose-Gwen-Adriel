@@ -1,0 +1,3 @@
+= On fait le kata « GildedRose » en Rust.
+
+Vous pouvez retrouver le dépôt dans plusieurs langages https://github.com/emilybache/GildedRose-Refactoring-Kata[ici].
