@@ -1,3 +1,9 @@
 = On fait le kata « GildedRose » en Rust.
 
 Vous pouvez retrouver le dépôt dans plusieurs langages https://github.com/emilybache/GildedRose-Refactoring-Kata[ici].
+
+Exécute la commande `cargo test` pour compiler et exécuter les tests.
+Le résultat sera automatiquement affiché sur la sortie standard.
+
+Exécute la commande `cargo build` pour compiler le programme.
+Tu le trouveras sous le nom `target/debug/rust`
