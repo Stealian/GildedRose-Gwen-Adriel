@@ -76,3 +76,12 @@ pub fn sulfuras_quality_never_decrease() {
 
     assert_eq!(80, rose.items[0].quality);
 }
+
+#[test]
+pub fn backstage_passes_increase_by_2_10_days_before_peremption() {
+    let items = vec![Item::new(String::from("Backstage passes to a TAFKAL80ETC concert"), 10, 4)];
+    let mut rose = GildedRose::new(items);
+    rose.update_quality();
+
+    assert_eq!(6, rose.items[0].quality);
+}
