@@ -55,6 +55,16 @@ pub fn aged_brie_quality_increase_by_time() {
     assert_eq!(1, rose.items[0].quality);
 }
 
+
+#[test]
+pub fn quality_cannot_be_more_than_fifty() {
+    let items = vec![Item::new(String::from("Aged Brie"), 4, 50)];
+    let mut rose = GildedRose::new(items);
+    rose.update_quality();
+
+    assert_eq!(50, rose.items[0].quality);
+}
+
 #[test]
 pub fn sulfuras_quality_never_decrease() {
     let items = vec![Item::new(String::from("Sulfuras, Hand of Ragnaros"), 0, 80)];
