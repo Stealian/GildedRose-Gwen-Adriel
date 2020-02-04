@@ -70,18 +70,38 @@ pub fn quality_cannot_be_more_than_fifty() {
 pub fn sulfuras_quality_never_decrease() {
     let items = vec![Item::new(String::from("Sulfuras, Hand of Ragnaros"), 0, 80)];
     let mut rose = GildedRose::new(items);
-    for _i in 0..130 {
-        rose.update_quality();
-    }
+    rose.update_quality();
 
     assert_eq!(80, rose.items[0].quality);
 }
 
 #[test]
 pub fn backstage_passes_increase_by_2_10_days_before_peremption() {
-    let items = vec![Item::new(String::from("Backstage passes to a TAFKAL80ETC concert"), 10, 4)];
+    let items = vec![Item::new(String::from("Backstage passes to a TAFKAL80ETC concert"), 10, 4),
+                     Item::new(String::from("Backstage passes to a TAFKAL80ETC concert"), 6, 4)];
     let mut rose = GildedRose::new(items);
     rose.update_quality();
 
     assert_eq!(6, rose.items[0].quality);
+    assert_eq!(6, rose.items[1].quality);
+}
+
+#[test]
+pub fn backstage_passes_increase_by_3_5_days_before_peremption() {
+    let items = vec![Item::new(String::from("Backstage passes to a TAFKAL80ETC concert"), 5, 4),
+                     Item::new(String::from("Backstage passes to a TAFKAL80ETC concert"), 1, 4)];
+    let mut rose = GildedRose::new(items);
+    rose.update_quality();
+
+    assert_eq!(7, rose.items[0].quality);
+    assert_eq!(7, rose.items[1].quality);
+}
+
+#[test]
+pub fn backstage_passes_lose_quality_after_concert() {
+    let items = vec![Item::new(String::from("Backstage passes to a TAFKAL80ETC concert"), 0, 50)];
+    let mut rose = GildedRose::new(items);
+    rose.update_quality();
+
+    assert_eq!(0, rose.items[0].quality);
 }
