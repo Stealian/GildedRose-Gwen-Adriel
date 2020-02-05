@@ -19,20 +19,20 @@ pub fn sellin_always_decrease_each_day() {
 
 #[test]
 pub fn quality_decrease_by_1_each_day_before_peremption() {
-    let items = vec![Item::new(String::from("+5 Dexterity Vest"), 4, 1)];
+    let items = vec![Item::new(String::from("+5 Dexterity Vest"), 0, 3)];
     let mut rose = GildedRose::new(items);
     rose.update_quality();
 
-    assert_eq!(0, rose.items[0].quality);
+    assert_eq!(2, rose.items[0].quality);
 }
 
 #[test]
 pub fn quality_decrease_by_2_each_day_after_peremption() {
-    let items = vec![Item::new(String::from("+5 Dexterity Vest"), -4, 1)];
+    let items = vec![Item::new(String::from("+5 Dexterity Vest"), -1, 3)];
     let mut rose = GildedRose::new(items);
     rose.update_quality();
 
-    assert_eq!(0, rose.items[0].quality);
+    assert_eq!(1, rose.items[0].quality);
 }
 
 #[test]
