@@ -7,3 +7,5 @@ Le résultat sera automatiquement affiché sur la sortie standard.
 
 Exécute la commande `cargo build` pour compiler le programme.
 Tu le trouveras sous le nom `target/debug/rust`
+
+Exécute la commaned `cargo run` pour compiler le programme et l’exécuter directement.
