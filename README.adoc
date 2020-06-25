@@ -9,3 +9,6 @@ Exécute la commande `cargo build` pour compiler le programme.
 Tu le trouveras sous le nom `target/debug/rust`
 
 Exécute la commaned `cargo run` pour compiler le programme et l’exécuter directement.
+
+Projet de cours, fait en groupe de 2, sur deux semaine.
+C’est un Kata qui permet de faire du refactoring sur une base de code existante.
